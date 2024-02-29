@@ -6,7 +6,7 @@ const Reviews = () => {
   return (
     <div className="grid grid-flow-row grid-cols-12 py-10 text-neutral-600">
       <div className="col-span-12 my-auto flex flex-col items-center justify-center text-pretty text-center mx-0 md:mx-4 lg:mx-8">
-        <h1 className="font-bold text-3xl lg:text-4xl pb-6 lg:pb-12 text-black">
+        <h1 className="font-bold text-3xl lg:text-4xl pb-6 lg:pb-12 text-blue-900">
           Customer Reviews
         </h1>
         <h1 className="font-bold text-xl pb-6 lg:pb-12">

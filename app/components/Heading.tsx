@@ -6,6 +6,8 @@ import {
   IMG_TROPHY2,
   LANDING_BG2,
   IMG_CMP,
+  IMG_FRANCE,
+  IMG_ARROW,
 } from "../utils/constants";
 
 import Link from "next/link";
@@ -21,6 +23,11 @@ const Heading = () => {
           src={LANDING_BG1}
         />
         <div className="my-auto flex flex-col items-center justify-center text-pretty text-center mx-0 md:mx-4 lg:mx-8">
+          <div className="flex items-center justify-center mb-8">
+            <img className="w-16 h-16 mr-4" alt="France" src={IMG_FRANCE} />
+            <span className="text-7xl">---</span>
+            <img className="w-16 h-16 ml-4" alt="Arrow" src={IMG_ARROW} />
+          </div>
           <p className="font-bold text-5xl lg:text-7xl">
             French video with English subtitles
           </p>

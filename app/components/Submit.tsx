@@ -43,7 +43,7 @@ const Submit = () => {
 
   return (
     <div className="flex flex-col justify-center md:items-end text-center p-4">
-      <div className="w-fit p-2 rounded-full transition-all duration-300 hover:cursor-pointer hover:text-white hover:bg-black/75">
+      <div className="w-fit p-2 rounded-full transition-all duration-300 hover:cursor-pointer hover:text-white hover:bg-blue/75">
         <Link href="/">
           <ICO_BACK />
         </Link>

@@ -1,5 +1,6 @@
 export const API = "https://videodubber.ai/testinput";
-
+export const IMG_FRANCE = "https://cdn.iconscout.com/icon/free/png-512/free-france-3596704-2998747.png?f=webp&w=256";
+export const IMG_ARROW = "https://cdn.iconscout.com/icon/premium/png-512-thumb/uk-6-169601.png?f=webp&w=256"
 export const LANDING_BG1 =
   "https://www.happyscribe.com/assets/landing/illustrations/banner-left-e2d503ffa2704d79ba092bf4d386c66cc2e4bfa8264b4b0b95d442f5cd39481e.jpg";
 export const LANDING_BG2 =
@@ -155,3 +156,4 @@ export const ICO_BACK = () => {
     </svg>
   );
 };
+
