@@ -6,6 +6,8 @@ import Popup from "./Popup";
 import Link from "next/link";
 
 const Submit = () => {
+  const [data, setData] = useState({});
+  const [error, setError] = useState("");
   const [show, setShow] = useState(false);
   const [text, setText] = useState("");
   const [checked, setChecked] = useState(false);
@@ -13,16 +15,22 @@ const Submit = () => {
 
   //   SPACE
   const fetchAPI = async () => {
-    const inputString = `${checked ? true : false}${text}${sliderValue}`;
-    console.log(inputString);
+    // const inputString = `${checked ? true : false}${text}${sliderValue}`;
+    // const inputString = "true " + "das" + "25";
+    // console.log(inputString);
     try {
       // Make POST request using fetch
-      const response = await fetch("https://videodubber.ai/testinput", {
+      const response = await fetch(API, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ inputstring: inputString }),
+        // body: JSON.stringify({ inputstring: inputString }),
+        body: JSON.stringify({
+          name: text,
+          job: checked ? "leader" : "Employee",
+          salary: sliderValue,
+        }),
       });
 
       if (!response.ok) {
@@ -30,7 +38,7 @@ const Submit = () => {
       }
 
       const data = await response.json();
-      console.log("Response from server:", data);
+      setData(data);
       // Handle response as needed
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);
@@ -43,7 +51,7 @@ const Submit = () => {
 
   return (
     <div className="flex flex-col justify-center md:items-end text-center p-4">
-      <div className="w-fit p-2 rounded-full transition-all duration-300 hover:cursor-pointer hover:text-white hover:bg-blue/75">
+      <div className="w-fit p-2 rounded-full transition-all duration-300 hover:cursor-pointer hover:text-white hover:bg-black/75">
         <Link href="/">
           <ICO_BACK />
         </Link>
@@ -94,11 +102,11 @@ const Submit = () => {
           step="25"
         />
         <div className="w-full flex justify-between text-xs px-2">
-          <span>|</span>
-          <span>|</span>
-          <span>|</span>
-          <span>|</span>
-          <span>|</span>
+          <span>0</span>
+          <span>25</span>
+          <span>50</span>
+          <span>75</span>
+          <span>100</span>
         </div>
       </div>
       <div className="m-auto md:m-0 py-8">
@@ -114,6 +122,7 @@ const Submit = () => {
       </div>
       {show && (
         <Popup
+          data={data}
           setShow={() => {
             setShow(false);
           }}
